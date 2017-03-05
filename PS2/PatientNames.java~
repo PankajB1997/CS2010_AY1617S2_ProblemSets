@@ -1,0 +1,164 @@
+import java.util.*;
+import java.io.*;
+
+// write your matric number here: A0144919W
+// write your name here: Pankaj Bhootra
+// write list of collaborators here:
+// year 2017 hash code: DZAjKugdE9QiOQKGFbut (do NOT delete this line)
+
+class PatientNames {
+  // if needed, declare a private data structure here that
+  // is accessible to all methods in this class
+
+  // --------------------------------------------
+
+
+
+  // --------------------------------------------
+
+  public PatientNames() {
+    // Write necessary code during construction;
+    //
+    // write your answer here
+
+    // --------------------------------------------
+
+
+
+    // --------------------------------------------
+  }
+
+  void AddPatient(String patientName, int gender) {
+    // You have to insert the information (patientName, gender)
+    // into your chosen data structure
+    //
+    // write your answer here
+
+    // --------------------------------------------
+
+
+
+    // --------------------------------------------
+  }
+
+  void RemovePatient(String patientName) {
+    // You have to remove the patientName from your chosen data structure
+    //
+    // write your answer here
+
+    // --------------------------------------------
+
+
+
+    // --------------------------------------------
+  }
+
+  int Query(String START, String END, int gender) {
+    int ans = 0;
+
+    // You have to answer how many patient name starts
+    // with prefix that is inside query interval [START..END)
+    //
+    // write your answer here
+
+    // --------------------------------------------
+
+
+
+    // --------------------------------------------
+
+    return ans;
+  }
+
+  void run() throws Exception {
+    // do not alter this method to avoid unnecessary errors with the automated judging
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    PrintWriter pr = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    while (true) {
+      StringTokenizer st = new StringTokenizer(br.readLine());
+      int command = Integer.parseInt(st.nextToken());
+      if (command == 0) // end of input
+        break;
+      else if (command == 1) // AddPatient
+        AddPatient(st.nextToken(), Integer.parseInt(st.nextToken()));
+      else if (command == 2) // RemovePatient
+        RemovePatient(st.nextToken());
+      else // if (command == 3) // Query
+        pr.println(Query(st.nextToken(), // START
+                         st.nextToken(), // END
+                         Integer.parseInt(st.nextToken()))); // GENDER
+    }
+    pr.close();
+  }
+
+  public static void main(String[] args) throws Exception {
+    // do not alter this method to avoid unnecessary errors with the automated judging
+    PatientNames ps2 = new PatientNames();
+    ps2.run();
+  }
+}
+
+class Patient
+{
+  private String patientName;
+  private int gender;
+  private int queueNumber;
+  private int index;
+  private static int queue = 1;
+  
+  public Patient()
+  {
+    patientName = "";
+    gender = 0;
+    index = 0;
+    queueNumber = queue++;
+  }
+  
+  public Patient(String name, int gender)
+  {
+    patientName = name;
+    emergencyLevel = emergency;
+    index = -1;
+    queueNumber = queue++;
+  }
+  
+  public void setPatientName(String name)
+  {
+    patientName = name;
+  }
+  
+  public void setEmergencyLevel(int level)
+  {
+    emergencyLevel = level;
+  }
+  
+  public String getPatientName()
+  {
+    return patientName;
+  }
+  
+  public int getEmergencyLevel()
+  {
+    return emergencyLevel;
+  }
+  
+  public int getQueueNumber()
+  {
+    return queueNumber;
+  }
+  
+  public int getIndex()
+  {
+    return index;
+  }
+  
+  public void setIndex(int index)
+  {
+    this.index = index;
+  }
+  
+  public String toString()
+  {
+    return "["+patientName+", "+emergencyLevel+", "+queueNumber+"]";
+  }
+}
